@@ -1,25 +1,27 @@
-﻿namespace CNPJValidator.Core;
+﻿using System.Text.RegularExpressions;
 
-public static class Validator
+namespace CNPJValidatorV2.Core;
+
+public static class CNPJValidator
 {
     private static readonly int[] weights = [2, 3, 4, 5, 6, 7, 8, 9];
     
-    public static string CalculateDV(string cnpj, bool format = false)
+    public static string CalculateDV(string cnpj)
     {
-        cnpj = Sanitize(cnpj);
+        cnpj = SanitizeCNPJ(cnpj);
 
         if (cnpj.Length != 12)
-            throw new ArgumentException("CNPJ must be 12 digits long.");
+            throw new ArgumentException("CNPJ must be 12 digits long");
 
         cnpj += CalculateDigit(cnpj);
         cnpj += CalculateDigit(cnpj);
 
-        return format ? cnpj.FormatCNPJ() : cnpj;
+        return cnpj;
     }
 
     public static bool IsValid(string cnpj)
     {
-        cnpj = Sanitize(cnpj);
+        cnpj = SanitizeCNPJ(cnpj);
 
         if (cnpj.Length != 14)
             return false;
@@ -32,10 +34,12 @@ public static class Validator
 
         return calculate == cnpj;
     }
+    
+    public static string SanitizeCNPJ(this string cnpj) => Regex.Replace(cnpj, "[^a-zA-Z0-9]", string.Empty);
 
     public static string FormatCNPJ(this string cnpj)
     {
-        cnpj = Sanitize(cnpj);
+        cnpj = SanitizeCNPJ(cnpj);
 
         return cnpj.Length >= 14
             ? $"{cnpj[..2]}.{cnpj[2..5]}.{cnpj[5..8]}/{cnpj[8..12]}-{cnpj[12..]}"
@@ -51,14 +55,5 @@ public static class Validator
 
         var remainder = sum % 11;
         return remainder > 1 ? 11 - remainder : 0;
-    }
-
-    private static string Sanitize(string cnpj)
-    {
-        return cnpj
-            .Replace(".", "")
-            .Replace("-", "")
-            .Replace("/", "")
-            .Trim();
     }
 }
