@@ -3,7 +3,8 @@
 public static class Validator
 {
     private static readonly int[] weights = [2, 3, 4, 5, 6, 7, 8, 9];
-    public static string CalculateDV(string cnpj)
+    
+    public static string CalculateDV(string cnpj, bool format = false)
     {
         cnpj = Sanitize(cnpj);
 
@@ -13,18 +14,7 @@ public static class Validator
         cnpj += CalculateDigit(cnpj);
         cnpj += CalculateDigit(cnpj);
 
-        return cnpj;
-    }
-
-    private static int CalculateDigit(string cnpj)
-    {
-        var sum = cnpj
-            .Reverse()
-            .Select((c, i) => (c - 48) * weights[i % weights.Length])
-            .Sum();
-
-        var remainder = sum % 11;
-        return remainder > 1 ? 11 - remainder : 0;
+        return format ? cnpj.FormatCNPJ() : cnpj;
     }
 
     public static bool IsValid(string cnpj)
@@ -50,6 +40,17 @@ public static class Validator
         return cnpj.Length >= 14
             ? $"{cnpj[..2]}.{cnpj[2..5]}.{cnpj[5..8]}/{cnpj[8..12]}-{cnpj[12..]}"
             : cnpj;
+    }
+
+    private static int CalculateDigit(string cnpj)
+    {
+        var sum = cnpj
+            .Reverse()
+            .Select((c, i) => (c - 48) * weights[i % weights.Length])
+            .Sum();
+
+        var remainder = sum % 11;
+        return remainder > 1 ? 11 - remainder : 0;
     }
 
     private static string Sanitize(string cnpj)
