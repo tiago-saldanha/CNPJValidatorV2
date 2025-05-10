@@ -1,4 +1,6 @@
-﻿namespace CNPJValidatorV2.Core
+﻿using System;
+
+namespace CNPJValidatorV2.Core
 {
     public class CNPJLengthException : Exception
     {

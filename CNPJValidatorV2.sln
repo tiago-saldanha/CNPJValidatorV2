@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{37E43C71-62DA-4923-85AC-F88DD58AF5C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNPJValidatorV2.Core", "Core\CNPJValidatorV2.Core.csproj", "{37E43C71-62DA-4923-85AC-F88DD58AF5C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{1C4B7CCB-1E1F-44E5-830D-C10BD5E2154D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNPJValidatorV2.Test", "Test\CNPJValidatorV2.Test.csproj", "{AB953A0A-4C89-6881-A8D9-C04ED588AABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{37E43C71-62DA-4923-85AC-F88DD58AF5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37E43C71-62DA-4923-85AC-F88DD58AF5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37E43C71-62DA-4923-85AC-F88DD58AF5C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C4B7CCB-1E1F-44E5-830D-C10BD5E2154D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C4B7CCB-1E1F-44E5-830D-C10BD5E2154D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C4B7CCB-1E1F-44E5-830D-C10BD5E2154D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C4B7CCB-1E1F-44E5-830D-C10BD5E2154D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB953A0A-4C89-6881-A8D9-C04ED588AABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB953A0A-4C89-6881-A8D9-C04ED588AABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB953A0A-4C89-6881-A8D9-C04ED588AABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB953A0A-4C89-6881-A8D9-C04ED588AABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

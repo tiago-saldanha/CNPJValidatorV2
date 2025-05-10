@@ -1,6 +1,6 @@
 using CNPJValidatorV2.Core;
 
-namespace Test
+namespace CNPJValidatorV2.Test
 {
     public class CNPJValidatorTest
     {
