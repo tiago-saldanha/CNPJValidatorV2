@@ -1,4 +1,3 @@
-using System;
 using CNPJValidatorV2.Core;
 
 namespace Test
@@ -65,7 +64,7 @@ namespace Test
         public void ShouldNotCalculateDVIfCNPJLessThan12Digtis()
         {
             var cnpj = "12ABC34501D";
-            var message = Assert.Throws<ArgumentException>(() => CNPJValidator.CalculateDV(cnpj)).Message;
+            var message = Assert.Throws<CNPJLengthException>(() => CNPJValidator.CalculateDV(cnpj)).Message;
             Assert.Equal("CNPJ must be 12 digits long", message);
         }
 
@@ -73,7 +72,7 @@ namespace Test
         public void ShouldSanitizeCNPJ()
         {
             var cnpj = "12.ABC.345/01DE-FG";
-            var expected = CNPJValidator.SanitizeCNPJ(cnpj);
+            var expected = cnpj.SanitizeCNPJ();
             Assert.Equal("12ABC34501DEFG", expected);
         }
     }

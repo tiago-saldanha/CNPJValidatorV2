@@ -8,10 +8,9 @@ public static class CNPJValidator
     
     public static string CalculateDV(string cnpj)
     {
-        cnpj = SanitizeCNPJ(cnpj);
+        cnpj = cnpj.SanitizeCNPJ();
 
-        if (cnpj.Length != 12)
-            throw new ArgumentException("CNPJ must be 12 digits long");
+        if (cnpj.Length != 12) throw new CNPJLengthException();
 
         cnpj += CalculateDigit(cnpj);
         cnpj += CalculateDigit(cnpj);
@@ -21,14 +20,12 @@ public static class CNPJValidator
 
     public static bool IsValid(string cnpj)
     {
-        cnpj = SanitizeCNPJ(cnpj);
+        cnpj = cnpj.SanitizeCNPJ();
 
         if (cnpj.Length != 14)
             return false;
 
-        var copy = cnpj[..12];
-
-        var calculate = CalculateDV(copy);
+        var calculate = CalculateDV(cnpj[..12]);
         if (calculate.Length != 14)
             return false;
 
@@ -39,7 +36,7 @@ public static class CNPJValidator
 
     public static string FormatCNPJ(this string cnpj)
     {
-        cnpj = SanitizeCNPJ(cnpj);
+        cnpj = cnpj.SanitizeCNPJ();
 
         return cnpj.Length >= 14
             ? $"{cnpj[..2]}.{cnpj[2..5]}.{cnpj[5..8]}/{cnpj[8..12]}-{cnpj[12..]}"
