@@ -1,4 +1,4 @@
-﻿# CNPJValidatorV2
+# CNPJValidatorV2
 
 Uma biblioteca C# moderna para validação, formatação e cálculo de dígito verificador de CNPJs.
 
@@ -24,19 +24,19 @@ dotnet add package CNPJValidatorV2
 ## 🔍 Exemplo de uso
 
 ```csharp
-using CNPJValidator.Core;
+using CNPJValidatorV2.Core;
 
 // Verifica se um CNPJ é válido
-bool valido = Validator.IsValid("12.345.678/0001-95"); // true
+bool valido = CNPJValidator.IsValid("12.345.678/0001-95"); // true
 
 // Formata um CNPJ simples
-string formatado = Validator.FormatCNPJ("12345678000195"); // "12.345.678/0001-95"
+string formatado = CNPJValidator.FormatCNPJ("12345678000195"); // "12.345.678/0001-95"
 
 // Calcula o DV a partir de um número base (com ou sem letras)
-string cnpjComDV = Validator.CalculateDV("12ABC34501DE"); // "12ABC34501DE35"
+string cnpjComDV = CNPJValidator.CalculateDV("12ABC34501DE"); // "12ABC34501DE35"
 
 // Calcula e já formata
-string formatadoComDV = Validator.CalculateDV("12ABC34501DE", true); // "12.ABC.345/01DE-35"
+string formatadoComDV = CNPJValidator.CalculateDV("12ABC34501DE").FormatCNPJ(); // "12.ABC.345/01DE-35"
 ```
 
 ---
@@ -45,7 +45,7 @@ string formatadoComDV = Validator.CalculateDV("12ABC34501DE", true); // "12.ABC.
 
 Este projeto possui testes com [xUnit](https://xunit.net/) que cobrem:
 
-- Validação de CNPJs reais com ou sem letras
+- Validação de CNPJs reais e falsos
 - Cálculo correto dos dígitos verificadores
 - Detecção de CNPJs malformados
 - Comparações com valores esperados
@@ -64,7 +64,7 @@ dotnet test
 O método `CalculateDV` lança exceção se o CNPJ tiver menos de 12 caracteres alfanuméricos:
 
 ```csharp
-Assert.Throws<ArgumentException>(() => Validator.CalculateDV("123"));
+Assert.Throws<ArgumentException>(() => CNPJValidator.CalculateDV("123"));
 ```
 
 ---
