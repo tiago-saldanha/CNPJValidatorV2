@@ -4,10 +4,11 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Version>1.1.4</Version>
+		<Version>1.1.5</Version>
 		<PackageId>CNPJValidatorV2</PackageId>
 		<Authors>Tiago Saldanha</Authors>
 		<Company>TAS Cloud</Company>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>Biblioteca para validação de CNPJ compatível com os dois tipos de CNPJ`s - com/sem letras.</Description>
 		<PackageTags>CNPJ;CNPJ-Alfa;NF-e;.NET</PackageTags>
 		<PackageProjectUrl>https://github.com/tas284/CNPJValidatorV2</PackageProjectUrl>
@@ -18,4 +19,7 @@
 		<Copyright>© 2025 Tiago Ávila Saldanha</Copyright>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
 </Project>
