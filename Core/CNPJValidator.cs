@@ -7,7 +7,8 @@ namespace CNPJValidatorV2.Core;
 public static class CNPJValidator
 {
     private static readonly int[] weights = [2, 3, 4, 5, 6, 7, 8, 9];
-    
+    private static readonly string[] invalids = ["00000000000000", "11111111111111", "22222222222222", "33333333333333", "44444444444444", "55555555555555", "66666666666666", "77777777777777", "88888888888888", "99999999999999"];
+
     public static string CalculateDV(string cnpj)
     {
         cnpj = cnpj.SanitizeCNPJ();
@@ -24,7 +25,7 @@ public static class CNPJValidator
     {
         cnpj = cnpj.SanitizeCNPJ();
 
-        if (cnpj.Length != 14)
+        if (cnpj.Length != 14 || invalids.Any(x => x == cnpj))
             return false;
 
         var calculate = CalculateDV(cnpj[..12]);
@@ -40,10 +41,9 @@ public static class CNPJValidator
     {
         cnpj = cnpj.SanitizeCNPJ();
 
-        var builder = new StringBuilder(18);
-
         if (cnpj.Length >= 14)
         {
+            var builder = new StringBuilder(18);
             builder.Append(cnpj[..2]).Append('.')
                    .Append(cnpj[2..5]).Append('.')
                    .Append(cnpj[5..8]).Append('/')
