@@ -30,7 +30,7 @@ using CNPJValidatorV2.Core;
 bool valido = CNPJValidator.IsValid("12.345.678/0001-95"); // true
 
 // Sanitiza um CNPJ
-string cnpj = "12.345.678/0001-95".Sanitize(); // "12345678000195"
+string cnpj = "12.345.678/0001-95".SanitizeCNPJ(); // "12345678000195"
 
 // Formata um CNPJ simples
 string formatado = "12345678000195".FormatCNPJ(); // "12.345.678/0001-95"
@@ -48,7 +48,7 @@ string formatadoComDV = CNPJValidator.CalculateDV("12ABC34501DE").FormatCNPJ(); 
 
 Este projeto possui testes com [xUnit](https://xunit.net/) que cobrem:
 
-- Validação de CNPJs reais e falsos
+- Validação de CNPJs reais
 - Cálculo correto dos dígitos verificadores
 - Detecção de CNPJs malformados
 - Comparações com valores esperados

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace CNPJValidatorV2.Core;
@@ -39,9 +40,20 @@ public static class CNPJValidator
     {
         cnpj = cnpj.SanitizeCNPJ();
 
-        return cnpj.Length >= 14
-            ? $"{cnpj[..2]}.{cnpj[2..5]}.{cnpj[5..8]}/{cnpj[8..12]}-{cnpj[12..]}"
-            : cnpj;
+        var builder = new StringBuilder(18);
+
+        if (cnpj.Length >= 14)
+        {
+            builder.Append(cnpj[..2]).Append('.')
+                   .Append(cnpj[2..5]).Append('.')
+                   .Append(cnpj[5..8]).Append('/')
+                   .Append(cnpj[8..12]).Append('-')
+                   .Append(cnpj[12..]);
+
+            return builder.ToString();
+        }
+
+        return cnpj;
     }
 
     private static int CalculateDigit(string cnpj)
