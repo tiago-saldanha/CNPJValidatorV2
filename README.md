@@ -75,3 +75,5 @@ Assert.Throws<ArgumentException>(() => CNPJValidator.CalculateDV("123"));
 ## 📄 Licença
 
 Este projeto está licenciado sob a licença MIT.
+
+© 2025 Tiago Ávila Saldanha
