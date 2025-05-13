@@ -4,24 +4,24 @@ namespace CNPJValidatorV2.Test
 {
     public class CNPJValidatorTest
     {
-        [Fact(DisplayName = "ShouldValidadeCNPJ")]
-        public void ShouldValidadeCNPJ()
+        [Fact(DisplayName = "ShouldValidateCNPJ")]
+        public void ShouldValidateCNPJ()
         {
             var cnpj = "12.345.678/0001-95";
             var expected = CNPJValidator.IsValid(cnpj);
             Assert.True(expected);
         }
 
-        [Fact(DisplayName = "ShouldNotValidadeCNPJ")]
-        public void ShouldNotValidadeCNPJ()
+        [Fact(DisplayName = "ShouldNotValidateCNPJ")]
+        public void ShouldNotValidateCNPJ()
         {
             var cnpj = "12.345.678/0001-94";
             var expected = CNPJValidator.IsValid(cnpj);
             Assert.False(expected);
         }
 
-        [Fact(DisplayName = "ShouldNotValidadeCNPJIfCNPJIsInvalid")]
-        public void ShouldNotValidadeCNPJIfCNPJIsInvalid()
+        [Fact(DisplayName = "ShouldNotValidateCNPJIfCNPJIsInvalid")]
+        public void ShouldNotValidateCNPJIfCNPJIsInvalid()
         {
             var cnpj = "11.111.111/1111-11";
             var expected = CNPJValidator.IsValid(cnpj);
@@ -68,8 +68,8 @@ namespace CNPJValidatorV2.Test
             Assert.NotEqual("12.ABC.345/01DE-37", expected);
         }
 
-        [Fact(DisplayName = "ShouldNotCalculateDVIfCNPJLessThan12Digtis")]
-        public void ShouldNotCalculateDVIfCNPJLessThan12Digtis()
+        [Fact(DisplayName = "ShouldNotCalculateDVIfCNPJHasLessThan12Digtis")]
+        public void ShouldNotCalculateDVIfCNPJHasLessThan12Digtis()
         {
             var cnpj = "12ABC34501D";
             var message = Assert.Throws<CNPJLengthException>(() => CNPJValidator.CalculateDV(cnpj)).Message;
