@@ -2,7 +2,7 @@ using CNPJValidatorV2.Core;
 
 namespace CNPJValidatorV2.Test
 {
-    public class CNPJValidatorTest
+    public class CnpjValidatorTest
     {
         [Theory]
         [InlineData("12345678000195", true)]
@@ -21,9 +21,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12.ABC.345/01AB-77", true)]
         [InlineData("12.ABC.345/01CD-82", true)]
         [InlineData("12.ABC.345/01FG-40", true)]
-        public void ShouldValidateCNPJ(string cnpj, bool expected)
+        public void ShouldValidateCnpj(string cnpj, bool expected)
         {
-            var actual = CNPJValidator.IsValid(cnpj);
+            var actual = CnpjValidator.IsValid(cnpj);
             Assert.Equal(actual, expected);
             Assert.True(actual);
         }
@@ -49,9 +49,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12.abC.345/01AB-71", false)]
         [InlineData("12.abc.345/01CD-81", false)]
         [InlineData("12.abc.345/01fg-41", false)]
-        public void ShouldNotValidateCNPJ(string cnpj, bool expected)
+        public void ShouldNotValidateCnpj(string cnpj, bool expected)
         {
-            var actual = CNPJValidator.IsValid(cnpj);
+            var actual = CnpjValidator.IsValid(cnpj);
             Assert.Equal(actual, expected);
             Assert.False(actual);
         }
@@ -77,9 +77,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("77.777.777/7777-77", false)]
         [InlineData("88.888.888/8888-88", false)]
         [InlineData("99.999.999/9999-99", false)]
-        public void ShouldNotValidateCNPJIfCNPJIsInvalid(string cnpj, bool expected)
+        public void ShouldNotValidateCnpjIfCnpjIsInvalid(string cnpj, bool expected)
         {
-            var actual = CNPJValidator.IsValid(cnpj);
+            var actual = CnpjValidator.IsValid(cnpj);
             Assert.Equal(actual, expected);
         }
 
@@ -92,9 +92,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12ABC34501AB77", "12.ABC.345/01AB-77")]
         [InlineData("12ABC34501CD82", "12.ABC.345/01CD-82")]
         [InlineData("12ABC34501FG40", "12.ABC.345/01FG-40")]
-        public void ShouldFormatCNPJ(string cnpj, string expected)
+        public void ShouldFormatCnpj(string cnpj, string expected)
         {
-            var actual = cnpj.FormatCNPJ();
+            var actual = cnpj.FormatCnpj();
             Assert.Equal(actual, expected);
         }
 
@@ -107,9 +107,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12ABC34501AB", "12ABC34501AB77")]
         [InlineData("12ABC34501CD", "12ABC34501CD82")]
         [InlineData("12ABC34501FG", "12ABC34501FG40")]
-        public void ShouldCalculateDV(string cnpj, string expected)
+        public void ShouldCalculateDv(string cnpj, string expected)
         {
-            var actual = CNPJValidator.CalculateDV(cnpj);
+            var actual = CnpjValidator.CalculateDv(cnpj);
             Assert.Equal(actual, expected);
         }
 
@@ -122,9 +122,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12ABC34501AB", "12ABC34501AB05")]
         [InlineData("12ABC34501CD", "12ABC34501CD06")]
         [InlineData("12ABC34501FG", "12ABC34501FG07")]
-        public void ShouldCalculateDVIsInvalid(string cnpj, string expected)
+        public void ShouldCalculateDvIsInvalid(string cnpj, string expected)
         {
-            var actual = CNPJValidator.CalculateDV(cnpj);
+            var actual = CnpjValidator.CalculateDv(cnpj);
             Assert.NotEqual(actual, expected);
         }
 
@@ -137,9 +137,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12ABC34501AB", "12.ABC.345/01AB-77")]
         [InlineData("12ABC34501CD", "12.ABC.345/01CD-82")]
         [InlineData("12ABC34501FG", "12.ABC.345/01FG-40")]
-        public void ShouldCalculateDVAndFormat(string cnpj, string expected)
+        public void ShouldCalculateDvAndFormat(string cnpj, string expected)
         {
-            var actual = CNPJValidator.CalculateDV(cnpj).FormatCNPJ();
+            var actual = CnpjValidator.CalculateDv(cnpj).FormatCnpj();
             Assert.Equal(actual, expected);
         }
 
@@ -153,9 +153,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12ABC34501CD", "12.ABC.345/01CD-05")]
         [InlineData("12ABC34501FG", "12.ABC.345/01FG-06")]
         [InlineData("12ABC34501FG", "12.ABC.345/01FG-AB")]
-        public void ShouldCalculateDVAndFormatButIsInvalid(string cnpj, string expected)
+        public void ShouldCalculateDvAndFormatButIsInvalid(string cnpj, string expected)
         {
-            var actual = CNPJValidator.CalculateDV(cnpj).FormatCNPJ();
+            var actual = CnpjValidator.CalculateDv(cnpj).FormatCnpj();
             Assert.NotEqual(actual, expected);
         }
 
@@ -171,9 +171,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12.345.678/0", "CNPJ must be 12 digits long")]
         [InlineData("12.345.678/00", "CNPJ must be 12 digits long")]
         [InlineData("12.345.678/000", "CNPJ must be 12 digits long")]
-        public void ShouldNotCalculateDVIfCNPJHasLessThan12Digtis(string cnpj, string expected)
+        public void ShouldNotCalculateDvIfCnpjHasLessThan12Digtis(string cnpj, string expected)
         {
-            var actual = Assert.Throws<CNPJLengthException>(() => CNPJValidator.CalculateDV(cnpj)).Message;
+            var actual = Assert.Throws<CNPJLengthException>(() => CnpjValidator.CalculateDv(cnpj)).Message;
             Assert.Equal(actual, expected);
         }
 
@@ -186,9 +186,9 @@ namespace CNPJValidatorV2.Test
         [InlineData("12.ABC.345/01AB-77", "12ABC34501AB77")]
         [InlineData("12.ABC.345/01CD-82", "12ABC34501CD82")]
         [InlineData("12.ABC.345/01FG-40", "12ABC34501FG40")]
-        public void ShouldSanitizeCNPJ(string cnpj, string expected)
+        public void ShouldSanitizeCnpj(string cnpj, string expected)
         {
-            var actual = cnpj.SanitizeCNPJ();
+            var actual = cnpj.SanitizeCnpj();
             Assert.Equal(actual, expected);
         }
     }
