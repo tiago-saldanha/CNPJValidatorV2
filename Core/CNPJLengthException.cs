@@ -8,11 +8,5 @@ namespace CNPJValidatorV2.Core
         public CNPJLengthException() : base(message)
         {
         }
-        public CNPJLengthException(string message) : base(message)
-        {
-        }
-        public CNPJLengthException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
     }
 }

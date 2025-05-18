@@ -91,7 +91,7 @@ namespace CNPJValidatorV2.Test
         public void ShouldFormatCNPJ(string cnpj, string expected)
         {
             var actual = cnpj.FormatCNPJ();
-            Assert.Equal(actual, expected); //"12.345.678/0001-95"
+            Assert.Equal(actual, expected);
         }
 
         [Theory]
