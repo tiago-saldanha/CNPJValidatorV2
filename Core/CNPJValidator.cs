@@ -8,7 +8,7 @@ public static class CNPJValidator
 {
     private static readonly int[] Weights = [2, 3, 4, 5, 6, 7, 8, 9];
     private static readonly string[] Invalids = ["00000000000000", "11111111111111", "22222222222222", "33333333333333", "44444444444444", "55555555555555", "66666666666666", "77777777777777", "88888888888888", "99999999999999"];
-    private static readonly string SanitizePattern = "[^a-zA-Z0-9]";
+    private static readonly string SanitizePattern = "[^A-Z0-9]";
     
     public static string CalculateDV(string cnpj)
     {
