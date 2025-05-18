@@ -45,6 +45,10 @@ namespace CNPJValidatorV2.Test
         [InlineData("12.ABC.345/01AB-71", false)]
         [InlineData("12.ABC.345/01CD-81", false)]
         [InlineData("12.ABC.345/01FG-41", false)]
+        [InlineData("12.aBC.345/01DE-31", false)]
+        [InlineData("12.abC.345/01AB-71", false)]
+        [InlineData("12.abc.345/01CD-81", false)]
+        [InlineData("12.abc.345/01fg-41", false)]
         public void ShouldNotValidateCNPJ(string cnpj, bool expected)
         {
             var actual = CNPJValidator.IsValid(cnpj);
@@ -166,6 +170,7 @@ namespace CNPJValidatorV2.Test
         [InlineData("12.345.678", "CNPJ must be 12 digits long")]
         [InlineData("12.345.678/0", "CNPJ must be 12 digits long")]
         [InlineData("12.345.678/00", "CNPJ must be 12 digits long")]
+        [InlineData("12.345.678/000", "CNPJ must be 12 digits long")]
         public void ShouldNotCalculateDVIfCNPJHasLessThan12Digtis(string cnpj, string expected)
         {
             var actual = Assert.Throws<CNPJLengthException>(() => CNPJValidator.CalculateDV(cnpj)).Message;

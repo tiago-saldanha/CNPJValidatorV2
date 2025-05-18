@@ -28,6 +28,8 @@ using CNPJValidatorV2.Core;
 
 // Verifica se um CNPJ é válido
 bool valido = CNPJValidator.IsValid("12.345.678/0001-95"); // true
+bool valido = CNPJValidator.IsValid("12.ABC.345/01DE-35"); // true
+bool valido = CNPJValidator.IsValid("12.aBC.345/01DE-35"); // false - somente letras maiúsculas são aceitas
 
 // Sanitiza um CNPJ
 string cnpj = "12.345.678/0001-95".SanitizeCNPJ(); // "12345678000195"
