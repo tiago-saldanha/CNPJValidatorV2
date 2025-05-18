@@ -27,21 +27,21 @@ dotnet add package CNPJValidatorV2
 using CNPJValidatorV2.Core;
 
 // Verifica se um CNPJ é válido
-bool valido = CNPJValidator.IsValid("12.345.678/0001-95"); // true
-bool valido = CNPJValidator.IsValid("12.ABC.345/01DE-35"); // true
-bool valido = CNPJValidator.IsValid("12.aBC.345/01DE-35"); // false - somente letras maiúsculas são aceitas
+bool valido = CnpjValidator.IsValid("12.345.678/0001-95"); // true
+bool valido = CnpjValidator.IsValid("12.ABC.345/01DE-35"); // true
+bool valido = CnpjValidator.IsValid("12.aBC.345/01DE-35"); // false - somente letras maiúsculas são aceitas
 
 // Sanitiza um CNPJ
-string cnpj = "12.345.678/0001-95".SanitizeCNPJ(); // "12345678000195"
+string cnpj = "12.345.678/0001-95".SanitizeCnpj(); // "12345678000195"
 
 // Formata um CNPJ simples
-string formatado = "12345678000195".FormatCNPJ(); // "12.345.678/0001-95"
+string formatado = "12345678000195".FormatCnpj(); // "12.345.678/0001-95"
 
 // Calcula o DV a partir de um número base (com ou sem letras)
-string cnpjComDV = CNPJValidator.CalculateDV("12ABC34501DE"); // "12ABC34501DE35"
+string cnpjComDV = CNPJValidator.CalculateDv("12ABC34501DE"); // "12ABC34501DE35"
 
 // Calcula e já formata
-string formatadoComDV = CNPJValidator.CalculateDV("12ABC34501DE").FormatCNPJ(); // "12.ABC.345/01DE-35"
+string formatadoComDV = CNPJValidator.CalculateDv("12ABC34501DE").FormatCnpj(); // "12.ABC.345/01DE-35"
 ```
 
 ---
@@ -66,10 +66,10 @@ dotnet test
 
 ## ⚠️ Erros tratados
 
-O método `CalculateDV` lança exceção se o CNPJ tiver menos de 12 caracteres alfanuméricos:
+O método `CalculateDv` lança exceção se o CNPJ tiver menos de 12 caracteres alfanuméricos:
 
 ```csharp
-Assert.Throws<ArgumentException>(() => CNPJValidator.CalculateDV("123"));
+Assert.Throws<ArgumentException>(() => CNPJValidator.CalculateDv("123"));
 ```
 
 ---
