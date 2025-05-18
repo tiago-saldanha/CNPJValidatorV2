@@ -28,8 +28,7 @@ public static class CNPJValidator
 
         if (cnpj.Length == 14 && !Invalids.Any(x => x == cnpj))
         {
-            var calculate = CalculateDV(cnpj[..12]);
-            return calculate == cnpj;
+            return CalculateDV(cnpj[..12]) == cnpj;
         }
         
         return false;
