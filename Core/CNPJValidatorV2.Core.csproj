@@ -4,7 +4,7 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>disable</Nullable>
-		<Version>1.1.7</Version>
+		<Version>1.1.8</Version>
 		<PackageId>CNPJValidatorV2</PackageId>
 		<Authors>Tiago Saldanha</Authors>
 		<Company>TAS Cloud</Company>
@@ -15,7 +15,7 @@
 		<RepositoryUrl>https://github.com/tas284/CNPJValidatorV2</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageReleaseNotes>Adicionado suporte validação de CNPJ`s com ou sem letras.</PackageReleaseNotes>
+		<PackageReleaseNotes>Adicionado suporte validação de CNPJ`s com ou sem letras. Cobertura de testes: 100%.</PackageReleaseNotes>
 		<Copyright>© 2025 Tiago Ávila Saldanha</Copyright>
 	</PropertyGroup>
 
