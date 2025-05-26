@@ -4,6 +4,12 @@ using System.Text.RegularExpressions;
 
 namespace CNPJValidatorV2.Core;
 
+/// <summary>
+/// Fornece métodos utilitários para sanitização, validação, cálculo de dígitos verificadores
+/// e formatação de números de CNPJ (Cadastro Nacional da Pessoa Jurídica), com ou sem formatação.
+/// 
+/// Suporta CNPJs alfanuméricos contendo letras maiúsculas e dígitos, conforme regras da Receita Federal.
+/// </summary>
 public static class CnpjValidator
 {
     private static readonly int[] Weights = [2, 3, 4, 5, 6, 7, 8, 9];
