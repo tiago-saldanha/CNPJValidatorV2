@@ -1,0 +1,520 @@
+### YamlMime:ManagedReference
+items:
+- uid: CNPJValidatorV2.Core.CnpjValidator
+  commentId: T:CNPJValidatorV2.Core.CnpjValidator
+  id: CnpjValidator
+  parent: CNPJValidatorV2.Core
+  children:
+  - CNPJValidatorV2.Core.CnpjValidator.CalculateDv(System.String)
+  - CNPJValidatorV2.Core.CnpjValidator.FormatCnpj(System.String)
+  - CNPJValidatorV2.Core.CnpjValidator.IsValid(System.String)
+  - CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj(System.String)
+  langs:
+  - csharp
+  - vb
+  name: CnpjValidator
+  nameWithType: CnpjValidator
+  fullName: CNPJValidatorV2.Core.CnpjValidator
+  type: Class
+  source:
+    remote:
+      path: Core/CNPJValidator.cs
+      branch: add-docfx
+      repo: https://github.com/tas284/CNPJValidatorV2.git
+    id: CnpjValidator
+    path: ../Core/CNPJValidator.cs
+    startLine: 12
+  assemblies:
+  - CNPJValidatorV2.Core
+  namespace: CNPJValidatorV2.Core
+  summary: >-
+    Fornece métodos utilitários para sanitização, validação, cálculo de dígitos verificadores
+
+    e formatação de números de CNPJ (Cadastro Nacional da Pessoa Jurídica), com ou sem formatação.
+
+
+    Suporta CNPJs alfanuméricos contendo letras maiúsculas e dígitos, conforme regras da Receita Federal.
+  example: []
+  syntax:
+    content: public static class CnpjValidator
+    content.vb: Public Module CnpjValidator
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CNPJValidatorV2.Core.CnpjValidator.CalculateDv(System.String)
+  commentId: M:CNPJValidatorV2.Core.CnpjValidator.CalculateDv(System.String)
+  id: CalculateDv(System.String)
+  parent: CNPJValidatorV2.Core.CnpjValidator
+  langs:
+  - csharp
+  - vb
+  name: CalculateDv(string)
+  nameWithType: CnpjValidator.CalculateDv(string)
+  fullName: CNPJValidatorV2.Core.CnpjValidator.CalculateDv(string)
+  type: Method
+  source:
+    remote:
+      path: Core/CNPJValidator.cs
+      branch: add-docfx
+      repo: https://github.com/tas284/CNPJValidatorV2.git
+    id: CalculateDv
+    path: ../Core/CNPJValidator.cs
+    startLine: 29
+  assemblies:
+  - CNPJValidatorV2.Core
+  namespace: CNPJValidatorV2.Core
+  summary: Calcula e retorna os dois dígitos verificadores de um CNPJ com base nos seus 12 primeiros caracteres alfanuméricos.
+  example: []
+  syntax:
+    content: public static string CalculateDv(string input)
+    parameters:
+    - id: input
+      type: System.String
+      description: Os 12 primeiros caracteres de um CNPJ alfanumérico (com ou sem formatação), contendo apenas letras maiúsculas e dígitos.
+    return:
+      type: System.String
+      description: O CNPJ completo (14 caracteres), sem formatação, com os dígitos verificadores calculados.
+    content.vb: Public Shared Function CalculateDv(input As String) As String
+  overload: CNPJValidatorV2.Core.CnpjValidator.CalculateDv*
+  exceptions:
+  - type: CNPJValidatorV2.Core.CNPJLengthException
+    commentId: T:CNPJValidatorV2.Core.CNPJLengthException
+    description: Lançada se o CNPJ não tiver exatamente 12 caracteres válidos após a sanitização.
+  nameWithType.vb: CnpjValidator.CalculateDv(String)
+  fullName.vb: CNPJValidatorV2.Core.CnpjValidator.CalculateDv(String)
+  name.vb: CalculateDv(String)
+- uid: CNPJValidatorV2.Core.CnpjValidator.IsValid(System.String)
+  commentId: M:CNPJValidatorV2.Core.CnpjValidator.IsValid(System.String)
+  id: IsValid(System.String)
+  parent: CNPJValidatorV2.Core.CnpjValidator
+  langs:
+  - csharp
+  - vb
+  name: IsValid(string)
+  nameWithType: CnpjValidator.IsValid(string)
+  fullName: CNPJValidatorV2.Core.CnpjValidator.IsValid(string)
+  type: Method
+  source:
+    remote:
+      path: Core/CNPJValidator.cs
+      branch: add-docfx
+      repo: https://github.com/tas284/CNPJValidatorV2.git
+    id: IsValid
+    path: ../Core/CNPJValidator.cs
+    startLine: 50
+  assemblies:
+  - CNPJValidatorV2.Core
+  namespace: CNPJValidatorV2.Core
+  summary: Verifica se um CNPJ alfanumérico (com ou sem formatação) é válido, incluindo os dígitos verificadores.
+  example: []
+  syntax:
+    content: public static bool IsValid(string input)
+    parameters:
+    - id: input
+      type: System.String
+      description: CNPJ alfanumérico (com ou sem formatação), contendo apenas letras maiúsculas e dígitos.
+    return:
+      type: System.Boolean
+      description: <code>true</code> se o CNPJ for válido (incluindo os dígitos verificadores); caso contrário, <code>false</code>.
+    content.vb: Public Shared Function IsValid(input As String) As Boolean
+  overload: CNPJValidatorV2.Core.CnpjValidator.IsValid*
+  nameWithType.vb: CnpjValidator.IsValid(String)
+  fullName.vb: CNPJValidatorV2.Core.CnpjValidator.IsValid(String)
+  name.vb: IsValid(String)
+- uid: CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj(System.String)
+  commentId: M:CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj(System.String)
+  id: SanitizeCnpj(System.String)
+  isExtensionMethod: true
+  parent: CNPJValidatorV2.Core.CnpjValidator
+  langs:
+  - csharp
+  - vb
+  name: SanitizeCnpj(string)
+  nameWithType: CnpjValidator.SanitizeCnpj(string)
+  fullName: CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj(string)
+  type: Method
+  source:
+    remote:
+      path: Core/CNPJValidator.cs
+      branch: add-docfx
+      repo: https://github.com/tas284/CNPJValidatorV2.git
+    id: SanitizeCnpj
+    path: ../Core/CNPJValidator.cs
+    startLine: 67
+  assemblies:
+  - CNPJValidatorV2.Core
+  namespace: CNPJValidatorV2.Core
+  summary: Remove todos os caracteres inválidos de um CNPJ, mantendo apenas letras maiúsculas (A–Z) e dígitos (0–9).
+  example: []
+  syntax:
+    content: public static string SanitizeCnpj(this string input)
+    parameters:
+    - id: input
+      type: System.String
+      description: CNPJ com ou sem formatação.
+    return:
+      type: System.String
+      description: CNPJ sanitizado contendo apenas letras maiúsculas e dígitos.
+    content.vb: Public Shared Function SanitizeCnpj(input As String) As String
+  overload: CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj*
+  nameWithType.vb: CnpjValidator.SanitizeCnpj(String)
+  fullName.vb: CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj(String)
+  name.vb: SanitizeCnpj(String)
+- uid: CNPJValidatorV2.Core.CnpjValidator.FormatCnpj(System.String)
+  commentId: M:CNPJValidatorV2.Core.CnpjValidator.FormatCnpj(System.String)
+  id: FormatCnpj(System.String)
+  isExtensionMethod: true
+  parent: CNPJValidatorV2.Core.CnpjValidator
+  langs:
+  - csharp
+  - vb
+  name: FormatCnpj(string)
+  nameWithType: CnpjValidator.FormatCnpj(string)
+  fullName: CNPJValidatorV2.Core.CnpjValidator.FormatCnpj(string)
+  type: Method
+  source:
+    remote:
+      path: Core/CNPJValidator.cs
+      branch: add-docfx
+      repo: https://github.com/tas284/CNPJValidatorV2.git
+    id: FormatCnpj
+    path: ../Core/CNPJValidator.cs
+    startLine: 74
+  assemblies:
+  - CNPJValidatorV2.Core
+  namespace: CNPJValidatorV2.Core
+  summary: Formata um CNPJ alfanumérico no padrão "00.000.000/0000-00", assumindo que ele tenha 14 caracteres válidos.
+  example: []
+  syntax:
+    content: public static string FormatCnpj(this string input)
+    parameters:
+    - id: input
+      type: System.String
+      description: CNPJ com ou sem formatação, contendo letras maiúsculas e/ou dígitos.
+    return:
+      type: System.String
+      description: O CNPJ formatado ou, se inválido, o valor original.
+    content.vb: Public Shared Function FormatCnpj(input As String) As String
+  overload: CNPJValidatorV2.Core.CnpjValidator.FormatCnpj*
+  nameWithType.vb: CnpjValidator.FormatCnpj(String)
+  fullName.vb: CNPJValidatorV2.Core.CnpjValidator.FormatCnpj(String)
+  name.vb: FormatCnpj(String)
+references:
+- uid: CNPJValidatorV2.Core
+  commentId: N:CNPJValidatorV2.Core
+  href: CNPJValidatorV2.html
+  name: CNPJValidatorV2.Core
+  nameWithType: CNPJValidatorV2.Core
+  fullName: CNPJValidatorV2.Core
+  spec.csharp:
+  - uid: CNPJValidatorV2
+    name: CNPJValidatorV2
+    href: CNPJValidatorV2.html
+  - name: .
+  - uid: CNPJValidatorV2.Core
+    name: Core
+    href: CNPJValidatorV2.Core.html
+  spec.vb:
+  - uid: CNPJValidatorV2
+    name: CNPJValidatorV2
+    href: CNPJValidatorV2.html
+  - name: .
+  - uid: CNPJValidatorV2.Core
+    name: Core
+    href: CNPJValidatorV2.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CNPJValidatorV2.Core.CNPJLengthException
+  commentId: T:CNPJValidatorV2.Core.CNPJLengthException
+  href: CNPJValidatorV2.Core.CNPJLengthException.html
+  name: CNPJLengthException
+  nameWithType: CNPJLengthException
+  fullName: CNPJValidatorV2.Core.CNPJLengthException
+- uid: CNPJValidatorV2.Core.CnpjValidator.CalculateDv*
+  commentId: Overload:CNPJValidatorV2.Core.CnpjValidator.CalculateDv
+  href: CNPJValidatorV2.Core.CnpjValidator.html#CNPJValidatorV2_Core_CnpjValidator_CalculateDv_System_String_
+  name: CalculateDv
+  nameWithType: CnpjValidator.CalculateDv
+  fullName: CNPJValidatorV2.Core.CnpjValidator.CalculateDv
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CNPJValidatorV2.Core.CnpjValidator.IsValid*
+  commentId: Overload:CNPJValidatorV2.Core.CnpjValidator.IsValid
+  href: CNPJValidatorV2.Core.CnpjValidator.html#CNPJValidatorV2_Core_CnpjValidator_IsValid_System_String_
+  name: IsValid
+  nameWithType: CnpjValidator.IsValid
+  fullName: CNPJValidatorV2.Core.CnpjValidator.IsValid
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj*
+  commentId: Overload:CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj
+  href: CNPJValidatorV2.Core.CnpjValidator.html#CNPJValidatorV2_Core_CnpjValidator_SanitizeCnpj_System_String_
+  name: SanitizeCnpj
+  nameWithType: CnpjValidator.SanitizeCnpj
+  fullName: CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj
+- uid: CNPJValidatorV2.Core.CnpjValidator.FormatCnpj*
+  commentId: Overload:CNPJValidatorV2.Core.CnpjValidator.FormatCnpj
+  href: CNPJValidatorV2.Core.CnpjValidator.html#CNPJValidatorV2_Core_CnpjValidator_FormatCnpj_System_String_
+  name: FormatCnpj
+  nameWithType: CnpjValidator.FormatCnpj
+  fullName: CNPJValidatorV2.Core.CnpjValidator.FormatCnpj

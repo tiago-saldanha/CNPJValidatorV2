@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: CNPJValidatorV2.Core
+  commentId: N:CNPJValidatorV2.Core
+  id: CNPJValidatorV2.Core
+  children:
+  - CNPJValidatorV2.Core.CNPJLengthException
+  - CNPJValidatorV2.Core.CnpjValidator
+  langs:
+  - csharp
+  - vb
+  name: CNPJValidatorV2.Core
+  nameWithType: CNPJValidatorV2.Core
+  fullName: CNPJValidatorV2.Core
+  type: Namespace
+  assemblies:
+  - CNPJValidatorV2.Core
+references:
+- uid: CNPJValidatorV2.Core.CNPJLengthException
+  commentId: T:CNPJValidatorV2.Core.CNPJLengthException
+  href: CNPJValidatorV2.Core.CNPJLengthException.html
+  name: CNPJLengthException
+  nameWithType: CNPJLengthException
+  fullName: CNPJValidatorV2.Core.CNPJLengthException
+- uid: CNPJValidatorV2.Core.CnpjValidator
+  commentId: T:CNPJValidatorV2.Core.CnpjValidator
+  href: CNPJValidatorV2.Core.CnpjValidator.html
+  name: CnpjValidator
+  nameWithType: CnpjValidator
+  fullName: CNPJValidatorV2.Core.CnpjValidator
