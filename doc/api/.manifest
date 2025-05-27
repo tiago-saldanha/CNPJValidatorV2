@@ -1,0 +1,10 @@
+{
+  "CNPJValidatorV2.Core": "CNPJValidatorV2.Core.yml",
+  "CNPJValidatorV2.Core.CNPJLengthException": "CNPJValidatorV2.Core.CNPJLengthException.yml",
+  "CNPJValidatorV2.Core.CNPJLengthException.#ctor": "CNPJValidatorV2.Core.CNPJLengthException.yml",
+  "CNPJValidatorV2.Core.CnpjValidator": "CNPJValidatorV2.Core.CnpjValidator.yml",
+  "CNPJValidatorV2.Core.CnpjValidator.CalculateDv(System.String)": "CNPJValidatorV2.Core.CnpjValidator.yml",
+  "CNPJValidatorV2.Core.CnpjValidator.FormatCnpj(System.String)": "CNPJValidatorV2.Core.CnpjValidator.yml",
+  "CNPJValidatorV2.Core.CnpjValidator.IsValid(System.String)": "CNPJValidatorV2.Core.CnpjValidator.yml",
+  "CNPJValidatorV2.Core.CnpjValidator.SanitizeCnpj(System.String)": "CNPJValidatorV2.Core.CnpjValidator.yml"
+}
