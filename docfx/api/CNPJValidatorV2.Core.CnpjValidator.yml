@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: Core/CNPJValidator.cs
-      branch: add-docfx
-      repo: https://github.com/tas284/CNPJValidatorV2.git
+      branch: configure-docs
+      repo: https://github.com/tiago-saldanha/CNPJValidatorV2.git
     id: CnpjValidator
     path: ../Core/CNPJValidator.cs
     startLine: 12
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: Core/CNPJValidator.cs
-      branch: add-docfx
-      repo: https://github.com/tas284/CNPJValidatorV2.git
+      branch: configure-docs
+      repo: https://github.com/tiago-saldanha/CNPJValidatorV2.git
     id: CalculateDv
     path: ../Core/CNPJValidator.cs
     startLine: 29
@@ -104,8 +104,8 @@ items:
   source:
     remote:
       path: Core/CNPJValidator.cs
-      branch: add-docfx
-      repo: https://github.com/tas284/CNPJValidatorV2.git
+      branch: configure-docs
+      repo: https://github.com/tiago-saldanha/CNPJValidatorV2.git
     id: IsValid
     path: ../Core/CNPJValidator.cs
     startLine: 50
@@ -143,8 +143,8 @@ items:
   source:
     remote:
       path: Core/CNPJValidator.cs
-      branch: add-docfx
-      repo: https://github.com/tas284/CNPJValidatorV2.git
+      branch: configure-docs
+      repo: https://github.com/tiago-saldanha/CNPJValidatorV2.git
     id: SanitizeCnpj
     path: ../Core/CNPJValidator.cs
     startLine: 67
@@ -182,8 +182,8 @@ items:
   source:
     remote:
       path: Core/CNPJValidator.cs
-      branch: add-docfx
-      repo: https://github.com/tas284/CNPJValidatorV2.git
+      branch: configure-docs
+      repo: https://github.com/tiago-saldanha/CNPJValidatorV2.git
     id: FormatCnpj
     path: ../Core/CNPJValidator.cs
     startLine: 74
