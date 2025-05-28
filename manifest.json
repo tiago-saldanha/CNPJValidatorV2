@@ -1,0 +1,130 @@
+{
+  "source_base_path": "C:/dev/CNPJValidatorV2/CNPJValidatorV2/doc",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CNPJValidatorV2.Core.CNPJLengthException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CNPJValidatorV2.Core.CNPJLengthException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CNPJValidatorV2.Core.CNPJLengthException",
+      "Summary": "<p sourcefile=\"api/CNPJValidatorV2.Core.CNPJLengthException.yml\" sourcestartlinenumber=\"1\">Exceção lançada quando o CNPJ possui um tamanho inválido.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CNPJValidatorV2.Core.CnpjValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CNPJValidatorV2.Core.CnpjValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CNPJValidatorV2.Core.CnpjValidator",
+      "Summary": "<p sourcefile=\"api/CNPJValidatorV2.Core.CnpjValidator.yml\" sourcestartlinenumber=\"1\">Fornece métodos utilitários para sanitização, validação, cálculo de dígitos verificadores\ne formatação de números de CNPJ (Cadastro Nacional da Pessoa Jurídica), com ou sem formatação.</p>\n<p sourcefile=\"api/CNPJValidatorV2.Core.CnpjValidator.yml\" sourcestartlinenumber=\"4\">Suporta CNPJs alfanuméricos contendo letras maiúsculas e dígitos, conforme regras da Receita Federal.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CNPJValidatorV2.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CNPJValidatorV2.Core.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CNPJValidatorV2.Core",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
