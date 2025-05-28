@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: Core/CNPJLengthException.cs
-      branch: add-docfx
-      repo: https://github.com/tas284/CNPJValidatorV2.git
+      branch: configure-docs
+      repo: https://github.com/tiago-saldanha/CNPJValidatorV2.git
     id: CNPJLengthException
     path: ../Core/CNPJLengthException.cs
     startLine: 7
@@ -66,8 +66,8 @@ items:
   source:
     remote:
       path: Core/CNPJLengthException.cs
-      branch: add-docfx
-      repo: https://github.com/tas284/CNPJValidatorV2.git
+      branch: configure-docs
+      repo: https://github.com/tiago-saldanha/CNPJValidatorV2.git
     id: .ctor
     path: ../Core/CNPJLengthException.cs
     startLine: 14
