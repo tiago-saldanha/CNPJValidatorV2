@@ -1,80 +1,107 @@
 # CNPJValidatorV2
 
-Uma biblioteca C# moderna e extensível para **validação**, **formatação** e **cálculo de dígitos verificadores** de CNPJs — agora com suporte a **CNPJs alfanuméricos**, de acordo com as diretrizes previstas pela Receita Federal do Brasil.
+[![NuGet](https://img.shields.io/nuget/v/CNPJValidatorV2.svg)](https://www.nuget.org/packages/CNPJValidatorV2)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/CNPJValidatorV2.svg)](https://www.nuget.org/packages/CNPJValidatorV2)
+[![Build](https://github.com/tiago-saldanha/CNPJValidatorV2/actions/workflows/publish.yml/badge.svg)](https://github.com/tiago-saldanha/CNPJValidatorV2/actions)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+Biblioteca .NET para validação, cálculo de dígitos verificadores e formatação de **CNPJ**, com suporte a:
+
+- ✅ CNPJ numérico tradicional  
+- ✅ CNPJ alfanumérico (com letras maiúsculas)  
+- ✅ Entrada com ou sem máscara  
+- ✅ Sanitização automática  
+
+Compatível com **.NET Standard 2.0+**
 
 ---
 
-## ✨ Funcionalidades
+## 📦 Instalação
 
-- ✅ Validação de CNPJs com ou sem formatação
-- 🔤 Suporte a CNPJs **alfanuméricos** (letras maiúsculas e dígitos)
-- 🧮 Cálculo preciso dos dígitos verificadores (DV), baseado no **algoritmo oficial**
-- 🧼 Sanitização de entrada (remove caracteres inválidos)
-- 🧾 Formatação no padrão `00.000.000/0000-00`
-
----
-
-## 📐 Algoritmo de cálculo (Receita Federal)
-
-O cálculo dos dígitos verificadores segue o manual técnico da Receita Federal:
-
-1. O CNPJ (agora alfanumérico) possui 12 caracteres iniciais e 2 dígitos verificadores numéricos.
-2. Cada caractere é convertido para um valor numérico, subtraindo **48 do valor ASCII**.
-3. A sequência é processada da direita para a esquerda, multiplicando-se cada valor por **pesos de 2 a 9**, de forma cíclica.
-4. Soma-se os produtos e aplica-se o **módulo 11**:
-   - Se o resto for menor que 2, o DV é 0
-   - Caso contrário, o DV é `11 - resto`
-
-Referência: Manual de Especificações Técnicas do CNPJ – Receita Federal do Brasil
-
----
-
-## 🚀 Instalação
-
-Via NuGet:
+Via CLI:
 
 ```bash
 dotnet add package CNPJValidatorV2
 ```
 
+Via Package Manager:
+
+```powershell
+Install-Package CNPJValidatorV2
+```
+
+Ou pelo Visual Studio → Manage NuGet Packages.
+
 ---
 
-## 🔍 Exemplo de uso
+## 🚀 Compatibilidade
+
+Por utilizar `.NET Standard 2.0`, o pacote é compatível com:
+
+- .NET Framework 4.6.1+
+- .NET Core 2.0+
+- .NET 5+
+- .NET 6+
+- .NET 7+
+- .NET 8+
+- Xamarin
+- Mono
+
+---
+
+## 🧪 Exemplos de Uso
+
+### ✔ Validação
 
 ```csharp
 using CNPJValidatorV2.Core;
 
-// Verifica se um CNPJ é válido
-bool valido1 = CnpjValidator.IsValid("12.345.678/0001-95"); // true
-bool valido2 = CnpjValidator.IsValid("12.ABC.345/01DE-35"); // true
-bool valido3 = CnpjValidator.IsValid("12.aBC.345/01DE-35"); // false — apenas letras maiúsculas são aceitas
-
-// Sanitiza um CNPJ
-string cnpj = "12.345.678/0001-95".SanitizeCnpj(); // "12345678000195"
-
-// Formata um CNPJ simples
-string formatado = "12345678000195".FormatCnpj(); // "12.345.678/0001-95"
-
-// Calcula o DV a partir de um número base (alfanumérico)
-string cnpjComDV = CnpjValidator.CalculateDv("12ABC34501DE"); // "12ABC34501DE35"
-
-// Calcula e já formata
-string formatadoComDV = CnpjValidator.CalculateDv("12ABC34501DE").FormatCnpj(); // "12.ABC.345/01DE-35"
+bool valido = CnpjValidator.IsValid("12.345.678/0001-95");
 ```
 
 ---
 
-## ✅ Testes automatizados
+### ✔ Sanitização
 
-Este projeto possui testes com [xUnit](https://xunit.net/) que cobrem:
+```csharp
+string limpo = "12.345.678/0001-95".SanitizeCnpj();
+// Resultado: 12345678000195
+```
 
-- Validação de CNPJs numéricos e alfanuméricos
-- Cálculo exato dos dígitos verificadores
-- Detecção de formatos inválidos
-- Testes de formatação e sanitização
-- Casos especiais com letras e números mistos
+---
 
-Execute os testes com:
+### ✔ Formatação
+
+```csharp
+string formatado = "12345678000195".FormatCnpj();
+// Resultado: 12.345.678/0001-95
+```
+
+---
+
+### ✔ Cálculo de Dígitos Verificadores
+
+```csharp
+string cnpjComDv = CnpjValidator.CalculateDv("12ABC34501DE");
+```
+
+---
+
+## 🧩 Funcionalidades
+
+- Validação de CNPJ com regra oficial de DV
+- Suporte a letras maiúsculas
+- Extensões para string
+- Tratamento de entradas inválidas
+- Cobertura de testes 100%
+
+---
+
+## 🧪 Testes
+
+O projeto possui testes automatizados utilizando **xUnit**.
+
+Para executar:
 
 ```bash
 dotnet test
@@ -82,18 +109,23 @@ dotnet test
 
 ---
 
-## ⚠️ Erros tratados
+## 📦 Versionamento
 
-O método `CalculateDv` lança exceção se o CNPJ sanitizado não tiver exatamente 12 caracteres válidos:
+Este projeto segue **Semantic Versioning (SemVer)**:
 
-```csharp
-Assert.Throws<ArgumentException>(() => CNPJValidator.CalculateDv("123"));
+MAJOR.MINOR.PATCH
+
+Exemplo:
+
+- 1.3.0 → melhoria compatível
+- 2.0.0 → mudança breaking
+
+A publicação é automatizada via GitHub Actions ao criar uma tag:
+
+```bash
+git tag v1.3.0
+git push origin v1.3.0
 ```
-
----
-
-## 🧾 Compatibilidade futura
-Esta biblioteca está pronta para suportar mudanças legais futuras, como a adoção oficial de CNPJs alfanuméricos. O algoritmo foi desenvolvido com base na documentação técnica da Receita Federal, já considerando essas adaptações.
 
 ---
 
@@ -101,4 +133,4 @@ Esta biblioteca está pronta para suportar mudanças legais futuras, como a ado�
 
 Este projeto está licenciado sob a licença MIT.
 
-© 2025 Tiago Ávila Saldanha
+© 2026 Tiago Ávila Saldanha
