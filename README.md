@@ -94,7 +94,7 @@ string cnpjComDv = CnpjValidator.CalculateDv("12ABC34501DE");
 - Suporte a letras maiúsculas
 - Extensões para string
 - Tratamento de entradas inválidas
-- Cobertura de testes 100%
+- Coberto por testes unitários
 
 ---
 
@@ -110,30 +110,10 @@ dotnet test
 
 ---
 
-## 📦 Versionamento
-
-Este projeto segue **Semantic Versioning (SemVer)**:
-
-MAJOR.MINOR.PATCH
-
-Exemplo:
-
-- 1.3.0 → melhoria compatível
-- 2.0.0 → mudança breaking
-
-A publicação é automatizada via GitHub Actions ao criar uma tag:
-
-```bash
-git tag v1.3.0
-git push origin v1.3.0
-```
-
----
-
 ## 📄 Licença
 
 Este projeto está licenciado sob a licença MIT.
 
-© 2026 Tiago Ávila Saldanha
+Desenvolvido por [Tiago Ávila Saldanha](https://github.com/tiago-saldanha/CNPJValidatorV2)
 
-
+---
