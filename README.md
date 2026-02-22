@@ -2,7 +2,7 @@
 
 [![NuGet](https://img.shields.io/nuget/v/CNPJValidatorV2.svg)](https://www.nuget.org/packages/CNPJValidatorV2)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/CNPJValidatorV2.svg)](https://www.nuget.org/packages/CNPJValidatorV2)
-[![Build](https://github.com/tiago-saldanha/CNPJValidatorV2/actions/workflows/publish.yml/badge.svg)](https://github.com/tiago-saldanha/CNPJValidatorV2/actions)
+[![Build](https://github.com/tiago-saldanha/CNPJValidatorV2/actions/workflows/coverage.yml/badge.svg)](https://github.com/tiago-saldanha/CNPJValidatorV2/actions)
 [![Codecov](https://img.shields.io/codecov/c/github/tiago-saldanha/CNPJValidatorV2?branch=main)](https://codecov.io/gh/tiago-saldanha/CNPJValidatorV2)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -135,4 +135,5 @@ git push origin v1.3.0
 Este projeto está licenciado sob a licença MIT.
 
 © 2026 Tiago Ávila Saldanha
+
 
